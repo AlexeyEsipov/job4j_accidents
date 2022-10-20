@@ -10,21 +10,21 @@
   <div class="row pt-3">
     <div class="card" style="width: 100%">
       <div class="card-header">
-        Новый инцидент
+        Новое Происшествие
       </div>
       <div class="card-body">
         <form th:action="@{/saveAccident}" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="id" value="0"/>
           <div class="form-group">
-            <label for="name">Название Инцидента</label>
+            <label for="name">Название Происшествия</label>
             <input type="text" class="form-control" name="name" id="name" required>
           </div>
           <div class="form-group">
-            <label for="name">Описания</label>
+            <label for="text">Описание Происшествия</label>
             <input type="text" class="form-control" name="text" id="text" required>
           </div>
           <div class="form-group">
-            <label for="name">Адресс</label>
+            <label for="address">Адрес Происшествия</label>
             <input type="text" class="form-control" name="address" id="address" required>
           </div>
           <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
