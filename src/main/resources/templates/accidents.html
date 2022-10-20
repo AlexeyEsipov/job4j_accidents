@@ -15,6 +15,7 @@
         <th scope="col">Название Происшествия</th>
         <th scope="col">Описание Происшествия</th>
         <th scope="col">Адрес Происшествия</th>
+        <th scope="col">Тип Происшествия</th>
       </tr>
       </thead>
       <tbody>
@@ -28,6 +29,7 @@
         </td>
         <td th:text="${accident.text}"/>
         <td th:text="${accident.address}"/>
+        <td th:text="${accident.type.name}"/>
       </tr>
       </tbody>
     </table>
