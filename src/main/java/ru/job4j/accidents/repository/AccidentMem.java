@@ -2,12 +2,16 @@ package ru.job4j.accidents.repository;
 
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Repository;
-import java.util.Collection;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
+import ru.job4j.accidents.model.Rule;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 @ThreadSafe
@@ -17,9 +21,16 @@ public class AccidentMem {
 
     public AccidentMem() {
         AccidentType at = new AccidentType(1, "Две машины");
-        accidents.put(1, new Accident(1, "name1", "text1", "address1", at));
-        accidents.put(2, new Accident(2, "name2", "text2", "address2", at));
-        accidents.put(3, new Accident(3, "name3", "text3", "address3", at));
+        Rule rule1 = new Rule(1, "Статья. 1");
+        Rule rule2 = new Rule(2, "Статья. 2");
+        Rule rule3 = new Rule(3, "Статья. 3");
+        Set<Rule> rules = new HashSet<>();
+        rules.add(rule1);
+        rules.add(rule2);
+        rules.add(rule3);
+        accidents.put(1, new Accident(1, "name1", "text1", "address1", at, rules));
+        accidents.put(2, new Accident(2, "name2", "text2", "address2", at, rules));
+        accidents.put(3, new Accident(3, "name3", "text3", "address3", at, rules));
     }
 
     public Collection<Accident> findAll() {
