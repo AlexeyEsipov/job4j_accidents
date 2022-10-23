@@ -4,20 +4,20 @@ import lombok.AllArgsConstructor;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.AccidentType;
-import ru.job4j.accidents.repository.AccidentTypeMem;
+import ru.job4j.accidents.repository.TypeJdbcTemplate;
 import java.util.Collection;
 
 @ThreadSafe
 @Service
 @AllArgsConstructor
 public class AccidentTypeService {
-    private final AccidentTypeMem accidentTypeMem;
+    private final TypeJdbcTemplate accidentType;
 
     public Collection<AccidentType> findAll() {
-        return accidentTypeMem.findAll();
+        return accidentType.findAll();
     }
 
     public AccidentType findById(int id) {
-        return accidentTypeMem.findById(id);
+        return accidentType.findById(id);
     }
 }

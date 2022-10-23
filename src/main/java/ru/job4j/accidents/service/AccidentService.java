@@ -3,15 +3,16 @@ package ru.job4j.accidents.service;
 import lombok.AllArgsConstructor;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
-import java.util.Collection;
 import ru.job4j.accidents.model.Accident;
-import ru.job4j.accidents.repository.AccidentMem;
+import ru.job4j.accidents.repository.AccidentJdbcTemplate;
+
+import java.util.Collection;
 
 @ThreadSafe
 @Service
 @AllArgsConstructor
 public class AccidentService {
-    private final AccidentMem accidentMem;
+    private final AccidentJdbcTemplate accidentMem;
 
     public Collection<Accident> findAll() {
         return accidentMem.findAll();

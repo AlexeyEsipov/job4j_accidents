@@ -9,9 +9,9 @@ import ru.job4j.accidents.model.AccidentType;
 
 @Repository
 @ThreadSafe
-public class AccidentTypeMem {
+public class TypeMem {
     private final Map<Integer, AccidentType> accTypeMap = new ConcurrentHashMap<>();
-    public AccidentTypeMem() {
+    public TypeMem() {
         accTypeMap.put(1, new AccidentType(1, "Две машины"));
         accTypeMap.put(2, new AccidentType(2, "Машина и человек"));
         accTypeMap.put(3, new AccidentType(3, "Машина и велосипед"));
