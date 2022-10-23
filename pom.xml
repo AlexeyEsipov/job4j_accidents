@@ -67,6 +67,17 @@
       <version>1.18.24</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.6.11.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>5.3.23</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -76,15 +87,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-      <!--liquibase-->
-      <!--<plugin>
-        <groupId>org.liquibase</groupId>
-        <artifactId>liquibase-maven-plugin</artifactId>
-        <version>4.15.0</version>
-        <configuration>
-          <propertyFile>db/liquibase.properties</propertyFile>
-        </configuration>
-      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
