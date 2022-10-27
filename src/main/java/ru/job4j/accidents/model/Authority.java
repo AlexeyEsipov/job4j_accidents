@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,5 +17,5 @@ public class Authority {
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String authorityName;
+    private String authority;
 }
