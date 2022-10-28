@@ -16,6 +16,12 @@
   <name>job4j_accidents</name>
   <description>A simple job4j_accidents.</description>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+
   <profiles>
     <profile>
       <id>test</id>
@@ -33,11 +39,6 @@
       </properties>
     </profile>
   </profiles>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
 
   <dependencies>
     <!--spring-boot  + thymeleaf-->

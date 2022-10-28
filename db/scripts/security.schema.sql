@@ -1,9 +1,9 @@
-CREATE TABLE authorities (
+CREATE TABLE IF NOT EXISTS authorities (
     id serial primary key,
     authority VARCHAR NOT NULL unique
 );
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id serial primary key,
     username VARCHAR NOT NULL unique,
     password VARCHAR NOT NULL,
@@ -15,5 +15,5 @@ insert into authorities (authority) values ('ROLE_USER');
 insert into authorities (authority) values ('ROLE_ADMIN');
 
 insert into users (username, enabled, password, authority_id)
-values ('root', true, '$2a$10$wY1twJhMQjGVxv4y5dBC5ucCBlzkzT4FIGa4FNB/pS9GaXC2wm9/W',
+values ('root', true, '$2a$10$CU/mFqLGvea3FY4/x36T/eFllVjqA9cFbjIBZepvRdGBRfYgVCyCq',
         (select id from authorities where authority = 'ROLE_ADMIN'));
