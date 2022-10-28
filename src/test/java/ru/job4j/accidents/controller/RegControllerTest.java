@@ -20,11 +20,10 @@ class RegControllerTest {
 
     @Test
     @WithMockUser
-    void shouldReturnSignup() throws Exception {
+    void checkReturnSignup() throws Exception {
         this.mockMvc.perform(get("/reg"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("registration"));
     }
-
 }

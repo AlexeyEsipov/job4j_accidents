@@ -21,7 +21,7 @@ class LoginControllerTest {
 
     @Test
     @WithMockUser
-    void shouldReturnLogin() throws Exception {
+    void checkReturnLogin() throws Exception {
         this.mockMvc.perform(get("/login"))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -30,11 +30,10 @@ class LoginControllerTest {
 
     @Test
     @WithMockUser
-    void shouldReturnLogout() throws Exception {
+    void checkReturnLogout() throws Exception {
         this.mockMvc.perform(get("/logout"))
                 .andDo(print())
                 .andExpect(status().is(302))
                 .andExpect(redirectedUrl("/login?logout=true"));
     }
-
 }
