@@ -18,12 +18,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr th:each="acc:${accidents}">
+        <tr th:each="acc: ${accidents}">
           <th scope="row" th:text="${acc.id}"></th>
           <td th:text="${acc.name}"></td>
           <td th:text="${acc.text}"></td>
           <td th:text="${acc.address}"></td>
           <td th:text="${acc.type.name}"></td>
+          <td>
+             <span th:each="rule,iterStat : ${acc.rules}"
+                   th:text="${rule.name} + ${!iterStat.last ? ', ' : ''}"></span>
+          </td>
         </tr>
       </tbody>
     </table>

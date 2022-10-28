@@ -28,7 +28,6 @@ public class LoginController {
         return "login";
     }
 
-//    @RequestMapping(value = "/logout", method = RequestMethod.GET)
     @GetMapping("/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
