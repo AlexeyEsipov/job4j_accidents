@@ -22,7 +22,7 @@
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
-  <profiles>
+  <!--<profiles>
     <profile>
       <id>test</id>
       <properties>
@@ -38,9 +38,9 @@
         <liquibase.config>db/liquibase.properties</liquibase.config>
       </properties>
     </profile>
-  </profiles>
+  </profiles>-->
 
-  <!--<profiles>
+  <profiles>
     <profile>
       <id>test</id>
       <properties>
@@ -62,7 +62,7 @@
         <db.driver>org.postgresql.Driver</db.driver>
       </properties>
     </profile>
-  </profiles>-->
+  </profiles>
 
 
 
@@ -233,7 +233,7 @@
         </executions>
       </plugin>
 
-      <plugin>
+      <!--<plugin>
       <groupId>org.liquibase</groupId>
       <artifactId>liquibase-maven-plugin</artifactId>
       <version>4.15.0</version>
@@ -249,16 +249,16 @@
           </goals>
         </execution>
       </executions>
-    </plugin>
+    </plugin>-->
 
-      <!--<plugin>
+      <plugin>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-maven-plugin</artifactId>
         <version>4.15.0</version>
         <configuration>
           <propertyFile>db/liquibase.properties</propertyFile>
         </configuration>
-      </plugin>-->
+      </plugin>
     </plugins>
   </build>
 </project>
