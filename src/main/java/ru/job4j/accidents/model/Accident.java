@@ -42,4 +42,14 @@ public class Accident {
         this.address = address;
         this.type = type;
     }
+
+    public static Accident of(String name, String text, String address, AccidentType type) {
+        Accident accident = new Accident();
+        accident.name = name;
+        accident.text = text;
+        accident.address = address;
+        accident.type = type;
+        return accident;
+    }
+
 }

@@ -18,4 +18,10 @@ public class AccidentType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    public static AccidentType of(String name) {
+        AccidentType type = new AccidentType();
+        type.name = name;
+        return type;
+    }
 }

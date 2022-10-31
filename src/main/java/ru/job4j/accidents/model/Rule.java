@@ -18,8 +18,9 @@ public class Rule {
     private int id;
     private String name;
 
-    @Override
-    public String toString() {
-        return "Rule{id=" + id + ", name= " + name + '}';
+    public static Rule of(String name) {
+        Rule rule = new Rule();
+        rule.name = name;
+        return rule;
     }
 }

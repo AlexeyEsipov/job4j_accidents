@@ -52,19 +52,6 @@ public class AccidentController {
     public String update(@ModelAttribute Accident accident,
                          @RequestParam("type.id") int id,
                          HttpServletRequest req) {
-        accidentService.update(fillAccident(accident, id, req));
-        return "redirect:/accidents";
-    }
-
-    @PostMapping("/saveAccident")
-    public String save(@ModelAttribute Accident accident,
-                       @RequestParam("type.id") int id,
-                       HttpServletRequest req) {
-        accidentService.add(fillAccident(accident, id, req));
-        return "redirect:/accidents";
-    }
-
-    private Accident fillAccident(Accident accident, int id, HttpServletRequest req) {
         AccidentType type = accidentTypeService.findById(id);
         String[] ids = req.getParameterValues("rIds");
         Set<Rule> rules = new HashSet<>();
@@ -73,7 +60,24 @@ public class AccidentController {
         }
         accident.setType(type);
         accident.setRules(rules);
-        return accident;
+        accidentService.update(accident);
+        return "redirect:/accidents";
+    }
+
+    @PostMapping("/saveAccident")
+    public String save(@ModelAttribute Accident accident,
+                       @RequestParam("type.id") int id,
+                       HttpServletRequest req) {
+        AccidentType type = accidentTypeService.findById(id);
+        String[] ids = req.getParameterValues("rIds");
+        Set<Rule> rules = new HashSet<>();
+        for (String statId : ids) {
+            rules.add(ruleService.findById(Integer.parseInt(statId)));
+        }
+        accident.setType(type);
+        accident.setRules(rules);
+        accidentService.add(accident);
+        return "redirect:/accidents";
     }
 
     private Model fillModel(Model model) {
