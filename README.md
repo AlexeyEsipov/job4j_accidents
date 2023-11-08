@@ -1,4 +1,7 @@
-"# -job4j_accidents" 
+# job4j_accidents 
+
+![github actions](https://github.com/AlexeyEsipov/job4j_accidents/actions/workflows/maven.yml/badge.svg)
+
 1. Техническое задание - проект "Автонарушители" [#260365]
    В блоке Spring мы будем разрабатывать проект - Автонарушители.
 
